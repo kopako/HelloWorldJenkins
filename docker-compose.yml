@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  takeout-container:
+    build: .
+    container_name: test-helloworld
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/takeout/
+    tty: true
