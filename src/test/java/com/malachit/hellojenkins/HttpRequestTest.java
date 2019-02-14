@@ -2,6 +2,8 @@ package com.malachit.hellojenkins;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +28,11 @@ public class HttpRequestTest {
     public void greetingShouldReturnDefaultMessage() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
                 String.class)).contains("Hello world");
+    }
+    
+    @Test
+    public void fail() {
+        assertEquals(true, false);
     }
 
 
