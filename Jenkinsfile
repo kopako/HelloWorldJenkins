@@ -18,5 +18,12 @@ pipeline {
             message: "${currentBuild.fullDisplayName} has failed. (<${env.BUILD_URL}|Open>)"
            )
         }
+        success {
+          slackSend (
+            channel: '#rueppellii-jenkins',
+            color: 'good',
+            message: "${currentBuild.fullDisplayName} has build. (<${env.BUILD_URL}|Open>)"
+           )
+        }
     }
 }
