@@ -2,10 +2,8 @@ pipeline {
     agent any
     stages {
         stage('developStage') {
-          when {
-            branch 'develop'
-          }
             steps {
+                sh 'git checkout develop'
                 sh './gradlew test --stacktrace'
             }
         }
