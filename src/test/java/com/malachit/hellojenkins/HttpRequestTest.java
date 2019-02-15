@@ -31,7 +31,7 @@ public class HttpRequestTest {
     }
     
     @Test
-    public void fail() {
+    public void successTest() {
         assertEquals(true, true);
     }
 
