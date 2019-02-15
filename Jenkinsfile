@@ -21,9 +21,9 @@ pipeline {
         
     }
     post {
-        always {
-          cleanWs()
-        }
+//        always {
+//          cleanWs()
+//        }
         failure {
           slackSend (
             channel: '#rueppellii-jenkins',
