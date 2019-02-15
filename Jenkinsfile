@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('developStage') {
           when {
-            branch 'develop'
+              not {
+                branch 'develop'
+              }
           }
             steps {
                 sh './gradlew test --stacktrace'
@@ -21,9 +23,9 @@ pipeline {
         
     }
     post {
-//        always {
-//          cleanWs()
-//        }
+        always {
+          cleanWs()
+        }
         failure {
           slackSend (
             channel: '#rueppellii-jenkins',
