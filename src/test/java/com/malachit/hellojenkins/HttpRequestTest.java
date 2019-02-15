@@ -32,7 +32,7 @@ public class HttpRequestTest {
     
     @Test
     public void fail() {
-        assertEquals(true, true);
+        assertEquals(true, false);
     }
 
 
