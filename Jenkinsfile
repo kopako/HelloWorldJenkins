@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {
         stage('check for any other') {
-            echo 'Other branchs'
+            steps {
+              echo 'Other branchs' 
+            }
         }
         stage('develop') {
           when {
