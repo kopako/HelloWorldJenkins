@@ -1,21 +1,24 @@
 pipeline {
     agent any
     stages {
-        stage('developStage') {
+        stage('check for any other') {
+            echo 'Other branchs'
+        }
+        stage('develop') {
           when {
-              not {
-                branch 'master'
-              }
+              branch 'develop'
           }
             steps {
+                echo 'develop'
                 sh './gradlew test --stacktrace'
             }
         }
-        stage('masterStage') {
+        stage('master') {
           when {
             branch 'master'
           }
             steps {
+                echo 'master'
                 sh './gradlew build --stacktrace'
             }
         }
