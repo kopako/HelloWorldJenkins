@@ -4,6 +4,7 @@ pipeline {
         stage('check for any other') {
             steps {
               echo 'Other branchs' 
+              sh './gradlew test --stacktrace'
             }
         }
         stage('develop') {
@@ -24,8 +25,6 @@ pipeline {
                 sh './gradlew build --stacktrace'
             }
         }
-        
-        
     }
     post {
         always {
